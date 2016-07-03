@@ -1,0 +1,14 @@
+<AbsoluteLayout *ngIf="toggled" row="1" width="100%" height="100%">
+    <!-- SIDE DRAWER -->
+    <GridLayout class="backdrop open-backdrop" width="100%" height="100%" (tap)="close.emit(false)"></GridLayout>
+    <GridLayout left="0" class="sideDrawer open-sidedrawer">
+        <StackLayout>
+            <!-- MENU ITEM -->
+            <GridLayout *ngFor="let item of sideDrawerItems" columns="*,3*" rows="*,auto" [class]="menuItemClass(item.page)" (tap)="menuItemTap(item)">
+                <Label col="0" row="0" [text]="item.icon" margin="5" class="fa s-font-icon left"></Label>
+                <Label col="1" row="0" [text]="item.name" margin="5" class="h5 left"></Label>
+                <GridLayout colSpan="2" row="1" class="h-spacer" backgroundColor="#ffca28"></GridLayout>
+            </GridLayout>
+        </StackLayout>
+    </GridLayout>
+</AbsoluteLayout>

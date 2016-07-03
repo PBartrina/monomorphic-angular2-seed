@@ -1,5 +1,293 @@
 @import 'styles/_variables.scss';
 
-.h1 {
-    color: $primary-color;
+Button{
+    color: $dark-color;
+    background-color: transparent;
+    border-color: transparent;
+    border-width: 1;
+}
+
+ListView{
+    margin-right: 5;
+    margin-left: 5;
+}
+
+Switch{
+    background-color: $dark-color;
+    color: $secondary-color;
+}
+
+.page{
+    background-color: $tertiary-color;
+}
+
+.highlight{
+    color: $dark-color;
+}
+
+.inverted-highlight{
+    color: $secondary-color;
+    background-color: $dark-color;
+}
+
+.list-item{
+    color: #616161;
+    margin: 3;
+    padding: 5;
+    height: 100;
+}
+
+.menu-item{
+    height: 40;
+}
+
+.menu-item-selected{
+    height: 40;
+    background-color: $medium-color;
+}
+
+.action-bar{
+    background-color: $primary-color;
+    color: $secondary-color;
+    height: 9%;
+}
+
+.title-bar{
+    background-color: $primary-color;
+    color: $secondary-color;
+    height: 7%;
+}
+
+.sideDrawer{
+    background-color: $tertiary-color;
+    height: 100%;
+    width: 130;
+    color: $dark-primary;
+}
+
+.backdrop{
+    background-color: #000000;
+    opacity: 0.3;
+}
+
+.cart-indicator{
+    margin: 20%;
+    background-color: $dark-color;
+    width: 12;
+    height: 12;
+    border-radius: 6;
+    color: $secondary-color;
+}
+
+.item-indicator{
+    background-color: $dark-color;
+    width: 20;
+    height: 20;
+    border-radius: 10;
+    font-size: 14;
+    color: $secondary-color;
+}
+
+.v-spacer{
+    width: 1;
+    height: 100%;
+}
+
+.h-spacer{
+    width: 100%;
+    height: 1;
+}
+
+/* FONT ICON */
+
+.fa{
+   font-family: 'FontAwesome';
+}
+
+.s-font-icon{
+    font-size: 20;
+}
+
+.m-font-icon{
+    font-size: 25;
+}
+
+.l-font-icon{
+    font-size: 35;
+}
+
+
+/* LIST VIEW */
+
+.odd{
+    background-color: $soft-color;
+}
+
+.even{
+    background-color: $medium-color;
+}
+
+/* POSITION */
+
+.center{
+    vertical-align: center;
+    horizontal-align: center;
+}
+
+.right{
+    vertical-align: center;
+    horizontal-align: right;
+}
+
+.left{
+    vertical-align: center;
+    horizontal-align: left;
+}
+
+.top{
+    vertical-align: top;
+    horizontal-align: center;
+}
+
+.bottom{
+    vertical-align: bottom;
+    horizontal-align: center;
+}
+
+.top-left{
+    vertical-align: top;
+    horizontal-align: left;
+}
+
+.top-right{
+    vertical-align: top;
+    horizontal-align: right;
+}
+
+.bottom-left{
+    vertical-align: bottom;
+    horizontal-align: left;
+}
+
+.bottom-right{
+    vertical-align: bottom;
+    horizontal-align: right;
+}
+
+/* MARGIN AND PADDING */
+
+.s-margin{
+    margin: 5;
+}
+
+.m-margin{
+    margin: 10;
+}
+
+.l-margin{
+    margin: 20;
+}
+
+.s-padding{
+    padding: 5;
+}
+
+.m-padding{
+    padding: 10;
+}
+
+.l-padding{
+    padding: 20;
+}
+
+/* TEXT */
+
+    /* STYLE */
+
+.bold{
+    font-weight: bold;
+}
+
+.italic{
+    font-style: italic;
+}
+
+    /* SIZE */
+
+.h1{
+    font-size: 50;
+}
+
+.h2{
+    font-size: 40;
+}
+
+.h3{
+    font-size: 30;
+}
+
+.h4{
+    font-size: 20;
+}
+
+.h5{
+    font-size: 15;
+}
+
+.h6{
+    font-size: 12;
+}
+
+/* ANIMATIONS */
+
+@keyframes open-sidedrawer {
+    0% { transform: translate(-130, 0) }
+    100% { transform: translate(0, 0) }
+}
+
+.open-sidedrawer {
+    animation-name: open-sidedrawer;
+    animation-duration: .500;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@keyframes open-backdrop {
+    0% { opacity: 0}
+    100% { opacity: 0.3 }
+}
+
+.open-backdrop {
+    animation-name: open-backdrop;
+    animation-duration: .500;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@keyframes close-sidedrawer {
+    0% { transform: translate(0, 0) }
+    100% { transform: translate(-130, 0) }
+}
+
+.close-sidedrawer {
+    animation-name: close-sidedrawer;
+    animation-duration: .500;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@keyframes close-backdrop {
+    0% { opacity: 0.3}
+    100% { opacity: 0 }
+}
+
+.close-backdrop {
+    animation-name: close-backdrop;
+    animation-duration: .500;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 }

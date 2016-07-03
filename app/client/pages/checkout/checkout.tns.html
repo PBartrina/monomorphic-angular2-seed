@@ -1,0 +1,19 @@
+<DockLayout class="page">
+    <!-- TITLE BAR -->
+    <GridLayout dock="top" class="title-bar">
+        <Label text="Checkout" class="center h4 bold"></Label>
+    </GridLayout>
+    <!-- BOTTOM BAR -->
+    <GridLayout dock="bottom" columns="*,auto" class="title-bar">
+        <Label col="0" [text]="total" class="left h4 bold s-margin"></Label>
+        <GridLayout col="1" width="20%" height="100%" class="inverted-highlight" (tap)="confirm()">
+            <Label text="Confirm" class="h5 bold center"></Label>
+        </GridLayout>
+    </GridLayout>
+    <!-- PERSONAL INFORMATION -->
+    <GridLayout rows="auto,auto,auto,auto,*">
+        <TextField row="0" hint="Name" [(ngModel)]="data.name"></TextField>
+        <TextField row="1" hint="E-mail" [(ngModel)]="data.email"></TextField>
+        <TextField row="2" hint="Credit Card Number" [(ngModel)]="data.card"></TextField>
+    </GridLayout>
+</DockLayout>

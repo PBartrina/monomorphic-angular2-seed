@@ -1,1 +1,24 @@
-<router-outlet></router-outlet>
+<GridLayout rows="auto,*" class="page">
+    <!-- ACTION BAR -->
+    <GridLayout row="0" columns="*,6*,*" class="action-bar">
+        <!-- LEFT ICON -->
+        <GridLayout col="0" (tap)="toggleSideDrawer()">
+            <Label #menuIcon text="&#xf0c9;" class="center fa m-font-icon"></Label>
+        </GridLayout>
+        <!-- TITLE -->
+        <Label col="1" text="Kitties Supermarket" class="h4 center bold"></Label>
+        <!-- RIGHT ICON -->
+        <GridLayout col="2" (tap)="goToCart()">
+            <Label text="&#xf07a;" class="center fa m-font-icon"></Label>
+            <GridLayout class="top-right cart-indicator">
+                <Label [text]="itemsInCart" fontSize="8" class="center bold"></Label>
+            </GridLayout>
+        </GridLayout>
+    </GridLayout>
+    <!-- ROUTER -->
+    <GridLayout row="1">
+        <router-outlet></router-outlet>
+    </GridLayout>
+    <!-- SIDE DRAWER-->
+    <menu [toggled]="sdToggled" (close)="toggleSideDrawer()"></menu>
+</GridLayout>

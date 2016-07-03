@@ -1,9 +1,8 @@
 {
 	"name": "monomorphic-angular2-seed",
 	"version": "1.0.0",
-	"main": "./src",
 	"nativescript": {
-		"id": "com.monomorphic-angular2-seed",
+		"id": "monomorphic.angular2.seed",
 		"tns-android": {
 			"version": "2.1.1"
 		},

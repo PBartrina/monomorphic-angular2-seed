@@ -1,0 +1,18 @@
+<form>
+    <fieldset class="form-group">
+        <label for="name">name address</label>
+        <input [(ngModel)]="data.name" type="text" class="form-control" id="name" placeholder="Enter email">
+        <small class="text-muted">We'll never share your email with anyone else.</small>
+    </fieldset>
+    <fieldset class="form-group">
+        <label for="email">Email address</label>
+        <input [(ngModel)]="data.email" type="email" class="form-control" id="email" placeholder="Enter email">
+        <small class="text-muted">We'll never share your email with anyone else.</small>
+    </fieldset>
+    <fieldset class="form-group">
+        <label for="card">Credit Card Number"</label>
+        <input [(ngModel)]="data.card" type="text" class="form-control" id="card" placeholder="Enter email">
+        <small class="text-muted">We'll never share your email with anyone else.</small>
+    </fieldset>
+    <button type="submit" class="btn btn-primary" (click)="confirm()">Submit</button>
+</form>

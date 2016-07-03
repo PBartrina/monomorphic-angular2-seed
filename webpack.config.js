@@ -47,6 +47,11 @@ var webpackConfig = {
       { test: /\.scss$/, loaders: ["to-string", "css?sourceMap", "sass?sourceMap"], include: [path.resolve(__dirname, 'app', 'client')] },
       { test: /\.html$/, loader: 'raw-loader' },
       { test: /\.json$/, loader: 'json-loader' },
+      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader?mimetype=image/svg+xml' },
+      { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader?mimetype=application/font-woff" },
+      { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader?mimetype=application/font-woff" },
+      { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader?mimetype=application/octet-stream" },
+      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader" },
     ]
   }
 

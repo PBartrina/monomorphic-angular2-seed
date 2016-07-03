@@ -1,1 +1,17 @@
+<menu></menu>
+<div class="jumbotron">
+    <h1 class="display-3">Adopt a WebCat!</h1>
+    <p class="lead">Webcats are the best pets ever! They are cute and fluffy, you don't even need to feed them and they never get sick! (And they probable are better coders than you are)</p>
+    <hr class="m-y-2">
+    <p>Browse all our WebKitties and start adopting!</p>
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="#" role="button">Adopt'em all!</a>
+    </p>
+</div>
 <router-outlet></router-outlet>
+<div class="fab">
+    <button type="button" class="btn btn-primary btn-lg" (click)="goToCart()">
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+        <span class="label label-pill label-default">{{itemsInCart}}</span>
+    </button>
+</div>

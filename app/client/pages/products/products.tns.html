@@ -1,1 +1,38 @@
-<Label text="Products" class="h1"></Label>
+<StackLayout class="page">
+    <!-- TITLE BAR -->
+    <GridLayout class="title-bar">
+        <Label text="Products" class="center h4 bold"></Label>
+    </GridLayout>
+    <!-- LISTVIEW / NGFOR SWITCH -->
+    <StackLayout orientation="horizontal" padding="5" backgroundColor="#ffe082">
+        <Label text="ListView/ngFor" class="left"></Label>
+        <Switch class="right" checked="false" (tap)="toggle()"></Switch>
+    </StackLayout>
+    <GridLayout>
+        <ListView [items]="items" *ngIf="!listToggled">
+            <template let-item="item" let-i="index" let-odd="odd" let-even="even">
+                <StackLayout>
+                    <GridLayout columns="2*, 4*,*" rows="auto, *, *" [class.odd]="odd" [class.even]="even" class="list-item">
+                        <Image col="0" row="0" rowSpan="3" [src]="item.picture" class="center"></Image>
+                        <Label col="1" row="0" [text]="item.name" class="bold"></Label>
+                        <Label col="1" row="1" rowSpan="2" textWrap="true" [text]="item.about"></Label>
+                        <Label col="2" row="0" [text]="item.price + '€/Kg'" class="center"></Label>
+                        <Label col="2" row="2" text="&#xf217;" (tap)="addToCart(item)" class="fa l-font-icon center highlight"></Label>
+                    </GridLayout>
+                </StackLayout>
+            </template>
+        </ListView>
+        <ScrollView *ngIf="listToggled">
+            <StackLayout>
+                <GridLayout *ngFor="let item of items; let i = index" columns="auto, *,auto" rows="auto, *"
+                            height="100" padding="5" [class]="i % 2 == 0 ? 'odd' : 'even'">
+                    <Image col="0" row="0" rowSpan="2" [src]="item.picture" class="center"></Image>
+                    <Label col="1" row="0" [text]="item.name" class="bold"></Label>
+                    <Label col="1" row="1" textWrap="true" [text]="item.about"></Label>
+                    <Label col="2" row="0" [text]="item.price + '€/Kg'" class="center"></Label>
+                    <Button col="2" row="1" text="&#xf217;" height="40" textWrap="true" (tap)="addToCart(item)" class="fa s-font-icon"></Button>
+                </GridLayout>
+            </StackLayout>
+        </ScrollView>
+    </GridLayout>
+</StackLayout>

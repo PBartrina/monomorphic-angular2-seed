@@ -1,1 +1,22 @@
-<h1>Products</h1>
+<div class="col-md-3" *ngFor="let item of items">
+    <div class="card">
+        <div class="card-block row">
+            <div class="col-md-7">
+                <h4 class="card-title">{{item.name}}</h4>
+                <h6 class="card-subtitle text-muted">Description Liption</h6>
+            </div>
+            <div class="col-md-5"><img [src]="item.picture" alt="{{item.name}} image" class="img-circle"></div>
+        </div>
+
+
+        <ul class="list-group list-group-flush text-xs-right">
+            <li class="list-group-item">{{item.price | currency:'EUR'}}</li>
+        </ul>
+        <div class="card-block">
+            <p class="card-text">{{item.about}}</p>
+        </div>
+        <div class="card-block text-sm-right">
+            <a (click)="addToCart(item)" class="btn btn-primary">Add to cart <i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</div>
