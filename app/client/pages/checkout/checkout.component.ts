@@ -2,8 +2,7 @@ import {Component, Inject} from "@angular/core";
 import {RouterConfig, ActivatedRoute, ROUTER_DIRECTIVES, Router} from '@angular/router';
 import {Config} from '../../app.config'
 import {MarketService} from "../../services/market.service";
-import {models} from "../../../common/models";
-// import {validators} from "../../../../common/validators";
+import {models, validators} from "../../../common";
 
 @Component({
     moduleId: module.id,
@@ -38,36 +37,36 @@ export class CheckoutPage {
     }
 
     public confirm() {
-            // if (validators.isValidName(this.data.name)
-            //     && validators.isValidMail(this.data.email)
-            //     && validators.isValidCard(this.data.card)) {
-            //     this._marketService.checkout(this.data).subscribe(result => {
-            //         if (this.config.PLATFORM === Platforms.tns) {
-            //             var dialogs = require("ui/dialogs");
-            //             dialogs.alert({
-            //                 title: "Kitties purchased",
-            //                 message: "Thanks for your purchase",
-            //                 okButtonText: "You're welcome"
-            //             }).then(function () {
-            //                 console.log("Dialog closed!");
-            //             });
-            //         } else {
-            //             alert("Kitties purchased")
-            //         }
-            //         console.log("checkout task complete!", JSON.stringify(result))
-            //     })
-            // } else {
-            //     if (this.config.PLATFORM === Platforms.tns) {
-            //             var dialogs = require("ui/dialogs");
-            //             dialogs.alert({
-            //                 title: "Data is invalid",
-            //                 message: "Data is invalid",
-            //                 okButtonText: "Okay"
-            //             });
-            //         } else {
-            //             alert("Data is invalid")
-            //         }
-            // }
+            if (validators.isValidName(this.data.name)
+                && validators.isValidMail(this.data.email)
+                && validators.isValidCard(this.data.card)) {
+                this._marketService.checkout(this.data).subscribe(result => {
+                    if (!global.web) {
+                        var dialogs = require("ui/dialogs");
+                        dialogs.alert({
+                            title: "Kitties purchased",
+                            message: "Thanks for your purchase",
+                            okButtonText: "You're welcome"
+                        }).then(function () {
+                            console.log("Dialog closed!");
+                        });
+                    } else {
+                        alert("Kitties purchased")
+                    }
+                    console.log("checkout task complete!", JSON.stringify(result))
+                })
+            } else {
+                if (!global.web) {
+                        var dialogs = require("ui/dialogs");
+                        dialogs.alert({
+                            title: "Data is invalid",
+                            message: "Data is invalid",
+                            okButtonText: "Okay"
+                        });
+                    } else {
+                        alert("Data is invalid")
+                    }
+            }
 
 
     }

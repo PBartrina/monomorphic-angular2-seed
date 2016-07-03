@@ -54,10 +54,10 @@ export class CartPage {
     }
 
     public remove(itemRow: ElementRef, id){
-         if (!global.web && global.android) {
-            let explosion = require('nativescript-explosionfield');
-            explosion.explode(itemRow.nativeElement);
-        }
+        //  if (!global.web && global.android) {
+        //     let explosion = require('nativescript-explosionfield');
+        //     explosion.explode(itemRow.nativeElement);
+        // }
         this._marketService.remove(id);
     }
 
